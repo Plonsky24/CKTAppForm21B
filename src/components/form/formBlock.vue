@@ -28,8 +28,8 @@
       </div>
     </div>
     <div v-if="question.type == 'picker'" class="picker-info flex flex-col items-center justify-center col-span-4 row-span-5 col-start-6">
-      <h1>Option name</h1>
-      <p>Option text</p>
+      <h1>{{answer || "Pili lang po kayo sa kaliwa!"}}</h1>
+      <p>{{answer ? question.c.find(item => item.val == answer).text : ""}}</p>
       <div class="picker-nav">
         <button @click="prev"><img src="@/assets/form/back.png" alt="Back"></button>
         <button @click="next"><img src="@/assets/form/next.png" alt="Next"></button>
@@ -37,7 +37,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import {mapMutations} from 'vuex'
 export default {

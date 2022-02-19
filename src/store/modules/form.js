@@ -6,32 +6,32 @@ const state = () => ({
     {q: "Ano pong para sa inyo?", type:"picker", c:[
       {
         img:"potchi.png",
-        val:"potchi",
+        val:"Potchi",
         text:"gwapo mo brad"
       },
       {
         img:"mik-mik.png",
-        val:"mik-mik",
+        val:"Mik-Mik",
         text:"gwapo mo brad"
       },
       {
         img:"sticko.png",
-        val:"stick-o",
+        val:"Stick-O",
         text:"gwapo mo brad"
       },
       {
         img:"dragon sid.png",
-        val:"dragon sid",
+        val:"Dragon Sid",
         text:"gwapo mo brad"
       },
       {
         img:"boy bawang.png",
-        val:"boy bawang",
+        val:"Boy Bawang",
         text:"gwapo mo brad"
       },
       {
         img:"sky flakes.png",
-        val:"sky flakes",
+        val:"Sky Flakes",
         text:"gwapo mo brad"
       },
     ]}
