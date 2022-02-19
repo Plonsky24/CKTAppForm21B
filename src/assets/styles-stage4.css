@@ -1,0 +1,176 @@
+/* New Additions
+-textarea
+-styles for input
+-styles for input bar
+-icon-with-text
+-more top-bar styling
+-button on the sidebar styling
+-post row final styling
+ */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;900&display=swap');
+
+:root {
+  --ash-gray: #cad2c5ff;
+  --tenne-tawny: #d65108ff;
+  --tenne-tawny-dark: #ab3f05ff;
+  --tenne-tawny-darkest: #9c3905ff;
+  --dark-slate-gray: #354f52ff;
+  --gunmetal:#212B31ff;
+  --main-font:'Fira Sans', sans serif;
+}
+
+/* GENERAL STYLES */
+
+body {
+  margin-left:0;
+  margin-right: 0;
+  background-color: var(--gunmetal);
+  font-family: var(--main-font);
+  color:white;
+}
+
+img {
+  max-height:2rem;
+  display:inline-block;
+  width:auto;
+}
+
+input[type="text"] {
+  background-color:transparent;
+  border:none;
+  border-bottom: 1px solid white;
+  font-family: var(--main-font);
+  color:white;
+}
+
+button {
+  /* Colors */
+  background-color: var(--tenne-tawny);
+  color:white;
+  font-family: var(--main-font);
+  /* Borders and spacing */
+  border:none;
+  padding:0.5rem;
+  border-radius:10px;
+  display:block;
+  /* Cursor */
+  cursor:pointer;
+}
+
+div.green-container {
+  background-color:var(--dark-slate-gray);
+  padding:0.5rem;
+  margin:0.5rem;
+  border-radius:10px;
+  box-shadow: 2px 2px 6px black;
+}
+
+.icon-with-text {
+  display:flex;
+  align-items: center;
+}
+
+.icon-with-text *{
+  margin:0.25rem;
+}
+
+/*SIDE BAR STYLES*/
+div.chirp-sidebar {
+  position:fixed;
+  left:0.25rem;
+  top:0.25rem;
+  width:15%
+}
+
+div.chirp-sidebar button{
+  margin-top:0.25rem;
+  width:100%;
+}
+
+
+/* CENTER CONTENT STYLES */
+div.center-container{
+  width:50%;
+  margin:auto;
+}
+
+/* Header */
+div.top-bar {
+  /* Border */
+  box-shadow: 2px 2px 6px black;
+  border-radius: 5px;
+  /* Margin and Padding */
+  padding:0.5rem;
+  margin:0.5rem;
+  /* Background */
+  background-color:var(--tenne-tawny);
+  /* Flexbox */
+  display:flex;
+  justify-content: space-between;
+  /* Additional styling */
+  position:sticky;
+  font-weight:600;
+  font-size:2rem;
+  position: -webkit-sticky;
+  top: 0rem; /* required */
+  z-index:1;
+}
+
+div.top-bar-ui {
+  display:flex;
+}
+
+div.top-bar-ui button {
+  margin:0 0.25rem;
+  padding:0;
+}
+
+/* INPUT FORM STYLES */
+div.chirp-username-bar input {
+  font-size:1.25rem;
+}
+
+div.chirp-text-bar {
+  display:flex;
+  align-items:stretch;
+  justify-content: space-between;
+  margin-top:0.25rem;
+}
+
+div.chirp-text-bar textarea{
+  /* Remove draggable resize */
+  resize:none;
+  /* Set flex size */
+  flex-basis:85%;
+  display:inline-block;
+  /* border settings */
+  box-sizing: border-box;
+  border-radius: 10px;
+  min-height:3.5rem;
+  font-family: var(--main-font);
+}
+
+div.chirp-text-bar button {
+  min-height:3rem;
+  flex-basis:12.5%;
+}
+
+/* POST ROW STYLES */
+div.post-row .post-username-bar span{
+  color:white;
+  font-weight:400;
+  font-size:1rem;
+}
+
+div.post-row p{
+  margin:0;
+  font-weight:300;
+}
+
+div.post-row span{
+  font-weight:300;
+  color:var(--ash-gray);
+  font-size:0.7rem;
+}

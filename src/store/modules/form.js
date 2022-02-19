@@ -1,8 +1,40 @@
 const state = () => ({
   questions: [
-    {q: "A?", type: "text", c: []},
+    {q: "BUONG PANGALAN", qsub: "(FULL NAME)", p:"Jose Rizal", type: "text", c: []},
     {q: "B?", type: "text", c: []},
     {q: "C?", type: "select", c: ["a", "b", "c"]},
+    {q: "Ano pong para sa inyo?", type:"picker", c:[
+      {
+        img:"potchi.png",
+        val:"potchi",
+        text:"gwapo mo brad"
+      },
+      {
+        img:"mik-mik.png",
+        val:"mik-mik",
+        text:"gwapo mo brad"
+      },
+      {
+        img:"sticko.png",
+        val:"stick-o",
+        text:"gwapo mo brad"
+      },
+      {
+        img:"dragon sid.png",
+        val:"dragon sid",
+        text:"gwapo mo brad"
+      },
+      {
+        img:"boy bawang.png",
+        val:"boy bawang",
+        text:"gwapo mo brad"
+      },
+      {
+        img:"sky flakes.png",
+        val:"sky flakes",
+        text:"gwapo mo brad"
+      },
+    ]}
   ],
   answers: ["", "", ""],
   qNo: 0

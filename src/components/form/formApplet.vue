@@ -1,8 +1,8 @@
 <template>
-  <div class="formApplet">
+  <div class="formApplet h-screen">
+
     <formBlock v-for="(v, k) in questions" :key="k" :question="v" :itemNo="k" v-show="currentQuestion == k"/>
     <reviewBlock v-show="currentQuestion == indexReview"/>
-    <br>
   </div>
 </template>
 
@@ -31,4 +31,13 @@ h1 {
   margin: 40px;
   text-align: center;
 }
+
+.formApplet, #special-form {
+  position: relative;
+  background-image:url("~@/assets/form/Background.png");
+  background-size:cover;
+  background-position: center;
+}
+
+
 </style>

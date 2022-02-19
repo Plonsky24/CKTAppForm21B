@@ -32,6 +32,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
+}
+
+@font-face {
+  font-family: DKCoolCrayon;
+  src: url("./assets/fonts/DkCoolCrayon.ttf");
+}
+
+@font-face {
+  font-family: DKNouveauCrayon;
+  src: url("./assets/fonts/DkNouveauCrayonRegular.otf");
 }
 </style>
