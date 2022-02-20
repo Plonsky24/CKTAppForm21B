@@ -1,11 +1,13 @@
 <template>
-  <div class="reviewBlock">
-    <div v-for="(v, k) in questions" :key="k">
-      Question #{{k}}: {{v.q}} -> {{answers[k]}}
+  <div class="reviewBlock grid grid-rows-5 h-full">
+    <h1 class="row-start-1">Mga Sagot Ninyo:</h1>
+    <div class="row-start-2 row-span-3">
+      <p class="question" :class="'row-start-' + (k+1)" v-for="(v, k) in questions" :key="k">{{v.q}}</p>
+      <p class="answer" :class="'row-start-' + (k+1)" v-for="(v, k) in questions" :key="'ans-' + k">{{answers[k]}}</p>
     </div>
-    <div class="buttons">
-      <button @click="prev">Previous</button>
-      <button @click="submit">Submit</button>
+    <div class="buttons row-start-5">
+      <button @click="prev"><img src="@/assets/form/back.png" alt="Back"></button>
+      <button @click="submit"><img src="@/assets/form/next.png" alt="Back"></button>
     </div>
   </div>
 </template>
@@ -34,7 +36,78 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
-  margin: 40px;
   text-align: center;
+  align-self: center;
+  font-size: 3rem;
 }
+
+.reviewBlock {
+  font-family: DkCoolCrayon, sans-serif;
+  font-size:2rem;
+  color:#db917b;
+}
+
+.reviewBlock > div:first-of-type {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-bottom:3rem;
+}
+
+.question{
+  grid-column-start: 1;
+  justify-self: end;
+}
+
+.answer {
+  grid-column-start: 2;
+  justify-self:start;
+}
+
+.buttons {
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.buttons button {
+  padding:2rem;
+  box-sizing: border-box;
+  transition: 0.2s ease-out;
+  position:relative;
+}
+
+.buttons button img {
+  max-width:12rem;
+  min-width:10rem;
+}
+
+.buttons button:hover {
+  color:white;
+}
+
+.buttons button:hover {
+  transform:scale(105%);
+}
+
+.buttons button:active {
+  transform:scale(95%);
+}
+
+.buttons button:first-of-type::after {
+  content:"Bumalik";
+  position:absolute;
+  top:-5%;
+  left:44%;
+  transform: translateX(-50%);
+}
+
+.buttons button:last-of-type::after {
+  content:"Ipasa";
+  position:absolute;
+  top:-5%;
+  left:44%;
+  transform: translateX(-50%);
+}
+
 </style>
