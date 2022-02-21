@@ -1,5 +1,15 @@
 const state = () => ({
-  page: 0
+  page: 0,
+  imagesToPreload: [
+    require('../../assets/landing/button.png'),
+    require('../../assets/landing/Tindahan BG Wide.png'),
+    require('../../assets/form/Background.png'),
+    require('../../assets/form/Notepad.png'),
+    require('../../assets/form/back.png'),
+    require('../../assets/form/next.png'),
+    require('../../assets/exit/tindahan.png'),
+    require('../../assets/exit/Background.png')
+  ]
 })
 
 // getters
@@ -25,18 +35,7 @@ const actions = {
     context.commit('incrementPage');
   },
   preloadImages(context){
-    const imagesToPreload = [
-      require('../../assets/landing/button.png'),
-      require('../../assets/landing/Tindahan BG Wide.png'),
-      require('../../assets/form/Background.png'),
-      require('../../assets/form/Notepad.png'),
-      require('../../assets/form/back.png'),
-      require('../../assets/form/next.png'),
-      require('../../assets/exit/tindahan.png'),
-      require('../../assets/exit/Background.png')
-    ];
-
-    const images = imagesToPreload.map(imageSrc => {
+    const images = context.state.imagesToPreload.map(imageSrc => {
       return new Promise((resolve, reject) => {
         const img = new Image();
         img.src = imageSrc;
