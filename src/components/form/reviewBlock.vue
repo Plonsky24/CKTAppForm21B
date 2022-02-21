@@ -3,7 +3,7 @@
     <h1 class="row-start-1">Mga Sagot Ninyo:</h1>
     <div class="row-start-2 row-span-3">
       <p class="question" :class="'row-start-' + (k+1)" v-for="(v, k) in questions" :key="k">{{v.q}}</p>
-      <p class="answer" :class="'row-start-' + (k+1)" v-for="(v, k) in questions" :key="'ans-' + k">{{answers[k]}}</p>
+      <p class="answer" :class="'row-start-' + (k+1)" v-for="(v, k) in questions" :key="'ans-' + k">{{answers[k].a}}</p>
     </div>
     <div class="buttons row-start-5">
       <button @click="prev"><img src="@/assets/form/back.png" alt="Back"></button>

@@ -5,9 +5,9 @@
       <img src="@/assets/form/Notepad.png" id="bg-dummy-main">
       <span class="input-label">{{question.q}}</span>
       <span class="input-sublabel">{{question.qsub}}</span>
-      <input :placeholder="question.p" class="menu-input" v-model="answer" v-if="question.type == 'text'" :class="{errCSS: !valid}">
+      <input :placeholder="question.p" class="menu-input" v-model="answer" v-if="question.type == 'text'" :class="{errCSS: !valid}" v-on:keyup.enter="next">
 
-      <select class="menu-input" v-model="answer" v-if="question.type == 'select'">
+      <select class="menu-input" v-model="answer" v-if="question.type == 'select'" v-on:keyup.enter="next">
         <option v-for="choice in question.c" :key="choice">{{choice}}</option>
       </select>
     </div>
