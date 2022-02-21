@@ -12,7 +12,7 @@
       </select>
     </div>
 
-    <div v-if="question.type != 'picker'" class="col-start-2 row-start-3 row-span-2 flex items-center justify-center">
+    <div v-if="question.type != 'picker' && itemNo != 0" class="col-start-2 row-start-3 row-span-2 flex items-center justify-center">
       <button @click="prev"><img :src="imgURL(bb)"></button>
     </div>
     <div v-if="question.type != 'picker'" class="col-start-8 row-start-3 row-span-2 flex items-center justify-center">

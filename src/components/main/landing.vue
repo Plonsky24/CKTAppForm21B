@@ -21,7 +21,7 @@ export default {
       return require('../../assets/'+String(loc))
     },
     ...mapActions({
-      next: 'page/incrementPage'
+      next: 'page/incrementPageBG'
     })
   }
 }
