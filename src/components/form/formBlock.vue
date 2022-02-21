@@ -1,21 +1,24 @@
 <template>
   <div class="formBlock grid grid-cols-9 grid-rows-5 gap-2 min-h-full">
+
     <div v-if="question.type != 'picker'">
       <img src="@/assets/form/Notepad.png" id="bg-dummy-main">
       <span class="input-label">{{question.q}}</span>
       <span class="input-sublabel">{{question.qsub}}</span>
-      <input :placeholder="question.p" class="menu-input" v-model="answer" v-if="question.type == 'text'">
+      <input :placeholder="question.p" class="menu-input" v-model="answer" v-if="question.type == 'text'" :class="{errCSS: !valid}">
+
       <select class="menu-input" v-model="answer" v-if="question.type == 'select'">
         <option v-for="choice in question.c" :key="choice">{{choice}}</option>
       </select>
-
     </div>
+
     <div v-if="question.type != 'picker'" class="col-start-2 row-start-3 row-span-2 flex items-center justify-center">
       <button @click="prev"><img src="@/assets/form/back.png" alt="Back"></button>
     </div>
     <div v-if="question.type != 'picker'" class="col-start-8 row-start-3 row-span-2 flex items-center justify-center">
       <button @click="next"><img src="@/assets/form/next.png" alt="Next"></button>
     </div>
+
     <div v-if="question.type == 'picker'" class="picker-container flex flex-col items-center justify-center col-span-5 row-span-5 row-start-1 col-start-1">
       <h1 class="special-header">{{question.q}}</h1>
       <div class="picker grid grid-cols-3 grid-rows-2 gap-2">
@@ -27,6 +30,7 @@
         </div>
       </div>
     </div>
+
     <div v-if="question.type == 'picker'" class="picker-info flex flex-col items-center justify-center col-span-4 row-span-5 col-start-6">
       <h1>{{answer || "Pili lang po kayo sa kaliwa!"}}</h1>
       <p>{{answer ? question.c.find(item => item.val == answer).text : ""}}</p>
@@ -38,7 +42,7 @@
   </div>
 </template>
 <script>
-import {mapMutations} from 'vuex'
+import {mapMutations, mapActions} from 'vuex'
 export default {
   name: 'formBlock',
   props: {
@@ -48,15 +52,22 @@ export default {
   computed: {
     answer: {
       get () {
-        return this.$store.state.form.answers[this.itemNo]
+        return this.$store.state.form.answers[this.itemNo].a
       },
       set (value) {
         this.$store.commit('form/updateAnswer', {answer: value, reference: this.itemNo})
       }
     },
+    valid: function() {
+      return this.$store.state.form.answers[this.itemNo].validated
+    },
     ...mapMutations({
       prev: 'form/decrementQuestion',
-      next: 'form/incrementQuestion',
+    })
+  },
+  methods: {
+    ...mapActions({
+      next: 'form/validateQuestion',
     })
   }
 }
@@ -83,6 +94,10 @@ h1 {
 .formBlock{
   overflow-y:hidden;
   z-index: 2;
+}
+
+.errCSS {
+  color: #db917b !important
 }
 
 .input-label {

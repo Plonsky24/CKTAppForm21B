@@ -25,7 +25,9 @@ export default {
     }),
     ...mapMutations({
       prev: 'form/decrementQuestion',
-    }),
+    })
+  },
+  methods: {
     ...mapActions({
       submit: 'form/submitForm',
     })

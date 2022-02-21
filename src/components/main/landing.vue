@@ -20,7 +20,9 @@ export default {
   computed: {
     imgURL: function() {
       return require('../../assets/'+this.bg)
-    },
+    }
+  },
+  methods: {
     ...mapActions({
       next: 'page/incrementPage'
     })

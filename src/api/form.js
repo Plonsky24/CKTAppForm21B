@@ -33,5 +33,8 @@ export default {
       },
     })
     .catch((err)=> console.error(err))
+  },
+  async validateForm () {
+    
   }
 }
