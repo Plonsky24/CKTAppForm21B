@@ -26,17 +26,17 @@ const actions = {
   },
   preloadImages(context){
     const imagesToPreload = [
-      'landing/button.png',
-      'landing/Tindahan BG Wide.png',
-      'form/Background.png',
-      'form/Notepad.png',
-      'form/back.png',
-      'form/next.png',
-      'exit/tindahan.png',
-      'exit/Background.png'
+      '../../landing/button.png',
+      '../../landing/Tindahan BG Wide.png',
+      '../../form/Background.png',
+      '../../form/Notepad.png',
+      '../../form/back.png',
+      '../../form/next.png',
+      '../../exit/tindahan.png',
+      '../../exit/Background.png'
     ];
 
-    const images = this.imagesToPreload.map(imageSrc => {
+    const images = imagesToPreload.map(imageSrc => {
       return new Promise((resolve, reject) => {
         const img = new Image();
         img.src = imageSrc;

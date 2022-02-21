@@ -10,7 +10,7 @@
       <div></div>
     </div>
     <div class="disclaimer no-select">
-      <h2 class="clickTag">Click the logo to proceed</h2>
+      <h2 class="clickTag">Please wait... we're loading</h2>
       For a better viewing experience, please view this site on a Desktop Computer
     </div>
   </div>
