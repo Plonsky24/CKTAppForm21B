@@ -1,8 +1,8 @@
 <template>
-  <div class="formApplet h-screen">
+  <div class="formApplet h-screen" v-bind:style="{backgroundImage:'url(' + imgURL +')'}">
 
-    <formBlock v-for="(v, k) in questions" :key="k" :question="v" :itemNo="k" v-show="currentQuestion == k"/>
-    <reviewBlock v-show="currentQuestion == indexReview"/>
+    <formBlock :bb='leftbutton' :fb="rightbutton" v-bind:bg="blockBg" v-for="(v, k) in questions" :key="k" :question="v" :itemNo="k" v-show="currentQuestion == k"/>
+    <reviewBlock :bb='leftbutton' :fb="rightbutton" v-show="currentQuestion == indexReview"/>
   </div>
 </template>
 
@@ -17,11 +17,22 @@ export default {
     formBlock,
     reviewBlock
   },
-  computed: mapState({
-    questions: state => state.form.questions,
-    currentQuestion: state => state.form.qNo,
-    indexReview: state => state.form.questions.length
-  })
+  props: {
+    bg:String,
+    blockBg:String,
+    leftbutton:String,
+    rightbutton:String
+  },
+  computed: {
+    imgURL: function() {
+      return require('../../assets/'+this.bg)
+    },
+    ...mapState({
+      questions: state => state.form.questions,
+      currentQuestion: state => state.form.qNo,
+      indexReview: state => state.form.questions.length
+    })
+  }
 }
 </script>
 
@@ -34,7 +45,7 @@ h1 {
 
 .formApplet, #special-form {
   position: relative;
-  background-image:url("~@/assets/form/Background.png");
+  /* background-image:url("~@/assets/form/Background.png"); */
   background-size:cover;
   background-position: center;
 }

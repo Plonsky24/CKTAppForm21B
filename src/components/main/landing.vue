@@ -2,7 +2,7 @@
   <div class="landing" >
     <img id="bg-dummy-landing">
     <button @click="next">
-      <img src="@/assets/landing/button.png">
+      <img :src="buttonURL">
     </button>
   </div>
 </template>
@@ -12,7 +12,8 @@ import {mapActions} from 'vuex'
 export default {
   name: 'landing',
   props: {
-    bg: String
+    bg: String,
+    button: String
   },
   mounted() {
     setTimeout(() => this.$store.dispatch('page/acquirePage'), 2000);
@@ -20,6 +21,9 @@ export default {
   computed: {
     imgURL: function() {
       return require('../../assets/'+this.bg)
+    },
+    buttonURL: function(){
+      return require('../../assets/'+this.button)
     }
   },
   methods: {
