@@ -26,17 +26,17 @@ const actions = {
   },
   preloadImages(context){
     const imagesToPreload = [
-      'landing/button.png',
-      'landing/Tindahan BG Wide.png',
-      'form/Background.png',
-      'form/Notepad.png',
-      'form/back.png',
-      'form/next.png',
-      'exit/tindahan.png',
-      'exit/Background.png'
+      require('../../assets/landing/button.png'),
+      require('../../assets/landing/Tindahan BG Wide.png'),
+      require('../../assets/form/Background.png'),
+      require('../../assets/form/Notepad.png'),
+      require('../../assets/form/back.png'),
+      require('../../assets/form/next.png'),
+      require('../../assets/exit/tindahan.png'),
+      require('../../assets/exit/Background.png')
     ];
 
-    const images = this.imagesToPreload.map(imageSrc => {
+    const images = imagesToPreload.map(imageSrc => {
       return new Promise((resolve, reject) => {
         const img = new Image();
         img.src = imageSrc;
