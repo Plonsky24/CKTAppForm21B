@@ -2,7 +2,7 @@
   <div class="landing" >
     <img id="bg-dummy-landing">
     <button @click="next">
-      <img :src="buttonURL">
+      <img :src="imgURL(button)">
     </button>
   </div>
 </template>
@@ -18,15 +18,11 @@ export default {
   mounted() {
     setTimeout(() => this.$store.dispatch('page/acquirePage'), 2000);
   },
-  computed: {
-    imgURL: function() {
-      return require('../../assets/'+this.bg)
-    },
-    buttonURL: function(){
-      return require('../../assets/'+this.button)
-    }
-  },
+  computed: {},
   methods: {
+    imgURL: function(loc) {
+      return require('../../assets/'+String(loc))
+    },
     ...mapActions({
       next: 'page/incrementPage'
     })

@@ -1,5 +1,5 @@
 <template>
-  <loading v-show="currentPage == 0"/>
+  <loading v-show="currentPage <= 0"/>
   <landing button="landing/button.png" bg="landing/Tindahan BG Wide.png" v-show="currentPage == 1"/>
   <formApplet bg="form/Background.png" blockBg="form/Notepad.png" leftbutton="form/back.png" rightbutton="form/next.png" v-show="currentPage == 2"/>
   <exit bgImg="exit/tindahan.png" bg="exit/Background.png" v-show="currentPage ==3"/>
@@ -21,7 +21,7 @@ export default {
     formApplet,
     exit
   },
-  computed: mapState({currentPage: state => state.page.page})
+  computed: mapState({currentPage: state => state.page.page}),
 }
 </script>
 

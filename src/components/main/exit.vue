@@ -1,6 +1,6 @@
 <template>
-  <div class="exit grid grid-cols-2" v-bind:style="{backgroundImage:'url(' + bgURL +')'}">
-    <img class="img-tindahan" :src="imgURL">
+  <div class="exit grid grid-cols-2" v-bind:style="{backgroundImage:'url(' + imgURL(bg) +')'}">
+    <img class="img-tindahan" :src="imgURL(bgImg)">
     <!-- <img class="img-text" src="@/assets/exit/kita-kits.png"> -->
     <div class="bannertext col-start-2">
       <h1>KITA-KITS!</h1>
@@ -18,12 +18,9 @@ export default {
     bg: String,
     bgImg:String
   },
-  computed: {
-    bgURL: function() {
-      return require('../../assets/'+this.bg)
-    },
-    imgURL: function() {
-      return require('../../assets/'+this.bgImg)
+  methods: {
+    imgURL: function(loc) {
+      return require('../../assets/'+String(loc))
     }
   }
 }
