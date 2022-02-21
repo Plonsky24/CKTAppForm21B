@@ -1,6 +1,6 @@
 <template>
   <loading v-show="currentPage == 0"/>
-  <landing bg="logo.png" v-show="currentPage == 1"/>
+  <landing bg="landing/Tindahan BG Wide.png" v-show="currentPage == 1"/>
   <formApplet v-show="currentPage == 2"/>
   <exit bg="logo.png" v-show="currentPage == 3"/>
 </template>
