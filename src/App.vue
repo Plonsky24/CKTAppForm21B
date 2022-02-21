@@ -10,6 +10,7 @@ import landing from './components/main/landing.vue'
 import loading from './components/main/loading.vue'
 import exit from './components/main/exit.vue'
 import formApplet from './components/form/formApplet.vue'
+import './tailwind.css'
 
 import { mapState } from 'vuex'
 
