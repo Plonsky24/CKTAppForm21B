@@ -1,6 +1,6 @@
 <template>
-  <div class="exit grid grid-cols-2">
-    <img class="img-tindahan" src="@/assets/exit/tindahan.png">
+  <div class="exit grid grid-cols-2" v-bind:style="{backgroundImage:'url(' + bgURL +')'}">
+    <img class="img-tindahan" :src="imgURL">
     <!-- <img class="img-text" src="@/assets/exit/kita-kits.png"> -->
     <div class="bannertext col-start-2">
       <h1>KITA-KITS!</h1>
@@ -15,11 +15,15 @@
 export default {
   name: 'landing',
   props: {
-    bg: String
+    bg: String,
+    bgImg:String
   },
   computed: {
-    imgURL: function() {
+    bgURL: function() {
       return require('../../assets/'+this.bg)
+    },
+    imgURL: function() {
+      return require('../../assets/'+this.bgImg)
     }
   }
 }
@@ -32,7 +36,7 @@ h1 {
 }
 
 .exit {
-  background-image: url("~@/assets/exit/Background.png");
+  /* background-image: url("~@/assets/exit/Background.png"); */
   height:100vh;
   background-size: cover;
   background-position:center;

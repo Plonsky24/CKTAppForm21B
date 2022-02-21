@@ -6,8 +6,8 @@
       <p class="answer" :class="'row-start-' + (k+1)" v-for="(v, k) in questions" :key="'ans-' + k">{{answers[k].a}}</p>
     </div>
     <div class="buttons row-start-5">
-      <button @click="prev"><img src="@/assets/form/back.png" alt="Back"></button>
-      <button @click="submit"><img src="@/assets/form/next.png" alt="Back"></button>
+      <button @click="prev"><img :src="backImgURL" alt="Back"></button>
+      <button @click="submit"><img :src="nextImgURL" alt="Back"></button>
     </div>
   </div>
 </template>
@@ -17,7 +17,17 @@ import {mapState, mapMutations, mapActions} from 'vuex'
 
 export default {
   name: 'reviewBlock',
+  props: {
+    bb:String,
+    fb:String
+  },
   computed: {
+    backImgURL: function() {
+      return require('../../assets/'+this.bb)
+    },
+    nextImgURL: function() {
+      return require('../../assets/'+this.fb)
+    },
     ...mapState({
       questions: state => state.form.questions,
       answers: state => state.form.answers,

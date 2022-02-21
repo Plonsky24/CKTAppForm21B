@@ -1,8 +1,8 @@
 <template>
   <loading v-show="currentPage == 0"/>
-  <landing bg="landing/Tindahan BG Wide.png" v-show="currentPage == 1"/>
-  <formApplet v-show="currentPage == 2"/>
-  <exit bg="logo.png" v-show="currentPage == 3"/>
+  <landing button="landing/button.png" bg="landing/Tindahan BG Wide.png" v-show="currentPage == 1"/>
+  <formApplet bg="form/Background.png" blockBg="form/Notepad.png" leftbutton="form/back.png" rightbutton="form/next.png" v-show="currentPage == 2"/>
+  <exit bgImg="exit/tindahan.png" bg="exit/Background.png" v-show="currentPage ==3"/>
 </template>
 
 <script>

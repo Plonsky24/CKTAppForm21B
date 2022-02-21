@@ -2,7 +2,7 @@
   <div class="formBlock grid grid-cols-9 grid-rows-5 gap-2 min-h-full">
 
     <div v-if="question.type != 'picker'">
-      <img src="@/assets/form/Notepad.png" id="bg-dummy-main">
+      <img :src="imgURL" id="bg-dummy-main">
       <span class="input-label">{{question.q}}</span>
       <span class="input-sublabel">{{question.qsub}}</span>
       <input :placeholder="question.p" class="menu-input" v-model="answer" v-if="question.type == 'text'" :class="{errCSS: !valid}" v-on:keyup.enter="next">
@@ -13,10 +13,10 @@
     </div>
 
     <div v-if="question.type != 'picker'" class="col-start-2 row-start-3 row-span-2 flex items-center justify-center">
-      <button @click="prev"><img src="@/assets/form/back.png" alt="Back"></button>
+      <button @click="prev"><img :src="backImgURL"></button>
     </div>
     <div v-if="question.type != 'picker'" class="col-start-8 row-start-3 row-span-2 flex items-center justify-center">
-      <button @click="next"><img src="@/assets/form/next.png" alt="Next"></button>
+      <button @click="next"><img :src="nextImgURL" alt="Next"></button>
     </div>
 
     <div v-if="question.type == 'picker'" class="picker-container flex flex-col items-center justify-center col-span-5 row-span-5 row-start-1 col-start-1">
@@ -35,8 +35,8 @@
       <h1>{{answer || "Pili lang po kayo sa kaliwa!"}}</h1>
       <p>{{answer ? question.c.find(item => item.val == answer).text : ""}}</p>
       <div class="picker-nav">
-        <button @click="prev"><img src="@/assets/form/back.png" alt="Back"></button>
-        <button @click="next"><img src="@/assets/form/next.png" alt="Next"></button>
+        <button @click="prev"><img :src="backImgURL" alt="Back"></button>
+        <button @click="next"><img :src="nextImgURL" alt="Next"></button>
       </div>
     </div>
   </div>
@@ -48,8 +48,20 @@ export default {
   props: {
     itemNo: Number,
     question: Object,
+    bg:String,
+    bb:String,
+    fb:String
   },
   computed: {
+    imgURL: function() {
+      return require('../../assets/'+this.bg)
+    },
+    backImgURL: function() {
+      return require('../../assets/'+this.bb)
+    },
+    nextImgURL: function() {
+      return require('../../assets/'+this.fb)
+    },
     answer: {
       get () {
         return this.$store.state.form.answers[this.itemNo].a
