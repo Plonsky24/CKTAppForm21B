@@ -1,7 +1,7 @@
 <template>
   <div class="loadingscreen">
-    <div @click="next" class="logo" >
-      <img @click="next" src="@/assets/upcircuitformal_small.png" alt="U.P. Circuit Logo" class="circuit-logo">
+    <div class="logo" >
+      <img src="@/assets/upcircuitformal_small.png" alt="U.P. Circuit Logo" class="circuit-logo">
     </div>
     <div class="loadingRing">
       <div></div>
