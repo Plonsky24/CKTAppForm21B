@@ -23,6 +23,19 @@ const actions = {
   },
   incrementPage(context){
     context.commit('incrementPage');
+  },
+  preloadImages(context){
+    [
+      'landing/button.png',
+      'landing/Tindahan BG Wide.png',
+      'form/Background.png',
+      'form/Notepad.png',
+      'form/back.png',
+      'form/next.png',
+      'exit/tindahan.png',
+      'exit/Background.png'
+    ].map((img) => new Image("../../"+img));
+    context.commit('incrementPage');
   }
 }
 

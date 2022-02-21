@@ -22,6 +22,9 @@ export default {
     exit
   },
   computed: mapState({currentPage: state => state.page.page}),
+  mounted() {
+    this.$store.dispatch('page/preloadImages')
+  }
 }
 </script>
 

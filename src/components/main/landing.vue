@@ -15,9 +15,6 @@ export default {
     bg: String,
     button: String
   },
-  mounted() {
-    setTimeout(() => this.$store.dispatch('page/acquirePage'), 2000);
-  },
   computed: {},
   methods: {
     imgURL: function(loc) {
