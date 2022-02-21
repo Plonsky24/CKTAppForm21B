@@ -202,6 +202,9 @@ h1.special-header {
   font-family:DKNouveauCrayon;
   font-size:2rem;
   color:#db917b;
+  white-space:pre-line;
+  box-sizing: border-box;
+  padding-right:1.5rem;
 }
 
 .picker-item::after {

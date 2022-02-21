@@ -13,32 +13,32 @@ const state = () => ({
       {
         img:"potchi.png",
         val:"Potchi",
-        text:"gwapo mo brad"
+        text:"A little pink ball of sweetness, sobrang irresistible. Potchi is a fitting candy to describe people who are really sweet and cute. Ito yung laging nagstastand out at may something sa kanila that makes them shiny, shimmering, splendid.\nCharacteristics: Cute, softie, tagasend ng wholesome memes, di marunong magalit"
       },
       {
         img:"mik-mik.png",
         val:"Mik-Mik",
-        text:"gwapo mo brad"
+        text:"Mikmik represents the “eh?” people. Super carefree and lutang in life and often thinks of nonsensical questions which actually makes sense. Bakit naman kasi maglalagay ng straw kung powder yung laman, diba? Nevertheless, gustong-gusto siya lapitan ng mga tao dahil napakaquirky niya.\nCharacteristics: Lutang, random, bubbly, sira-body-clock gang"
       },
       {
         img:"sticko.png",
         val:"Stick-O",
-        text:"gwapo mo brad"
+        text:"As it promotes sharing, Stik-O embodies people who are friendly and extroverted, those who are sociable and can be referred to as a \"people person\". Just like how it has different flavors, kayang kaya makifit sa lahat.\nCharacteristics: Extrovert, approachable, bibokid, maraming tropa sa ibang section, BS Org"
       },
       {
         img:"dragon sid.png",
         val:"Dragon Sid",
-        text:"gwapo mo brad"
+        text:"A snack that takes time to be opened up. If personified, its seeds shelled within are people who are introverted and shy. But when they do open up, super sayang kasama dahil maraming baong kwento.\nCharacteristics: Mahiyain, introvert, independent, lowkey"
       },
       {
         img:"boy bawang.png",
         val:"Boy Bawang",
-        text:"gwapo mo brad"
+        text:"Known for its strong garlicky flavor, this snack depicts brave-hearted people. Those who are courageous and stand firm on their virtues. Nothing stops them when it comes to achieving their dreams. Silver lining yarn?\nCharacteristics: Matapang, competitive, maingay sa social media, politically active"
       },
       {
         img:"sky flakes.png",
         val:"Sky Flakes",
-        text:"gwapo mo brad"
+        text:"Often eaten for the purpose of filling our stomachs conveniently, skyflakes is that snack which embodies people who are hardworking, and industrious in their work. Always ready to take on the day ahead kahit ano man ‘yan.\nCharacteristics: Masipag, nasa honors, laging puyat sa reqs, tagabuhat sa research"
       },
     ], validation: function(answer) {return this.c.map(({ val }) => val).includes(answer)}}
   ],
