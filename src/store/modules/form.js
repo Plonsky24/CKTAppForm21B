@@ -53,7 +53,7 @@ const state = () => ({
     {a: "", validated: true},
   ],
   qNo: 0,
-  clickAudio: new Audio(require('../../assets/audio/click noise.mp3'))
+  clickAudio: new Audio(src=[require('../../assets/audio/click noise.mp3')], volume: 0.4,)
 })
 
 // getters

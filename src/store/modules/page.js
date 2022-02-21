@@ -10,8 +10,8 @@ const state = () => ({
     require('../../assets/exit/tindahan.png'),
     require('../../assets/exit/Background.png')
   ],
-  clickAudio: new Audio(require('../../assets/audio/click noise.mp3')),
-  bgAudio: new Audio(require('../../assets/audio/ambient noise.mp3'))
+  clickAudio: new Audio(src=[require('../../assets/audio/click noise.mp3')], volume=0.4),
+  bgAudio: new Audio(src=[require('../../assets/audio/ambient noise.mp3')], volume=0.4)
 })
 
 // getters
