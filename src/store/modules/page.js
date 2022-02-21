@@ -25,7 +25,7 @@ const actions = {
     context.commit('incrementPage');
   },
   preloadImages(context){
-    [
+    const imagesToPreload = [
       'landing/button.png',
       'landing/Tindahan BG Wide.png',
       'form/Background.png',
@@ -34,8 +34,18 @@ const actions = {
       'form/next.png',
       'exit/tindahan.png',
       'exit/Background.png'
-    ].map((img) => new Image("../../"+img));
-    context.commit('incrementPage');
+    ];
+
+    const images = this.imagesToPreload.map(imageSrc => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = imageSrc;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    });
+
+    Promise.all(images).then(() => {context.commit('incrementPage')});
   }
 }
 
