@@ -53,7 +53,7 @@ const state = () => ({
     {a: "", validated: true},
   ],
   qNo: 0,
-  clickAudio: new Audio(src=[require('../../assets/audio/click noise.mp3')], volume: 0.4,)
+  clickAudio: new Audio(require('../../assets/audio/click noise.mp3'))
 })
 
 // getters
@@ -85,6 +85,7 @@ const mutations = {
   },
   incrementQuestion(state) {
     state.qNo++;
+    state.clickAudio.volume = 0.25;
     state.clickAudio.play();
   },
   decrementQuestion(state) {
@@ -93,6 +94,7 @@ const mutations = {
     } else {
       state.qNo--;
     }
+    state.clickAudio.volume = 0.25;
     state.clickAudio.play();
   }
 }

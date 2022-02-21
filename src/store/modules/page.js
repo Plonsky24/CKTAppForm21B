@@ -10,8 +10,8 @@ const state = () => ({
     require('../../assets/exit/tindahan.png'),
     require('../../assets/exit/Background.png')
   ],
-  clickAudio: new Audio(src=[require('../../assets/audio/click noise.mp3')], volume=0.4),
-  bgAudio: new Audio(src=[require('../../assets/audio/ambient noise.mp3')], volume=0.4)
+  clickAudio: new Audio(require('../../assets/audio/click noise.mp3')),
+  bgAudio: new Audio(require('../../assets/audio/ambient noise.mp3'))
 })
 
 // getters
@@ -38,7 +38,7 @@ const actions = {
   },
   incrementPageBG(context){
     context.commit('incrementPage');
-    context.state.bgAudio.play();
+    context.commit('bgAudioRun');
   },
   preloadImages(context){
     const images = context.state.imagesToPreload.map(imageSrc => {
@@ -58,7 +58,12 @@ const actions = {
 const mutations = {
   incrementPage(state){
     state.page++;
+    state.clickAudio.volume=0.25;
     state.clickAudio.play();
+  },
+  bgAudioRun(state){
+    state.bgAudio.volume=0.25;
+    state.bgAudio.play();
   },
   jumpToPage(state, n){
     state.page = n;
