@@ -54,6 +54,7 @@ h1 {
   font-family: DkCoolCrayon, sans-serif;
   font-size:2rem;
   color:#db917b;
+  overflow: hidden;
 }
 
 .reviewBlock > div:first-of-type {
@@ -61,6 +62,8 @@ h1 {
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   margin-bottom:3rem;
+  max-height:50vh;
+  overflow:auto;
 }
 
 .question{
@@ -77,6 +80,8 @@ h1 {
   display:flex;
   align-items: center;
   justify-content:center;
+  position:relative;
+  z-index:4;
 }
 
 .buttons button {
@@ -111,12 +116,33 @@ h1 {
   transform: translateX(-50%);
 }
 
+.buttons button {
+  padding-bottom: 0;
+}
+
 .buttons button:last-of-type::after {
   content:"Ipasa";
   position:absolute;
   top:-5%;
   left:44%;
   transform: translateX(-50%);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #db917b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #db917bAA;
 }
 
 </style>
